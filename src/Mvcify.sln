@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvcify.Core", "mvcify.core\Mvcify.Core.csproj", "{9F2B82B3-2184-45D1-BFBA-EA6227C6ACDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvcify.Common", "mvcify.common\Mvcify.Common.csproj", "{FD9A4378-2F87-450E-908C-CFB0F4262DA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvcify.UI.Test", "Mvcify.UI.Test\Mvcify.UI.Test.csproj", "{75A937D5-B446-4D41-91A9-104B90EE7A63}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9F2B82B3-2184-45D1-BFBA-EA6227C6ACDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F2B82B3-2184-45D1-BFBA-EA6227C6ACDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F2B82B3-2184-45D1-BFBA-EA6227C6ACDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F2B82B3-2184-45D1-BFBA-EA6227C6ACDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD9A4378-2F87-450E-908C-CFB0F4262DA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD9A4378-2F87-450E-908C-CFB0F4262DA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD9A4378-2F87-450E-908C-CFB0F4262DA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD9A4378-2F87-450E-908C-CFB0F4262DA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75A937D5-B446-4D41-91A9-104B90EE7A63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75A937D5-B446-4D41-91A9-104B90EE7A63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75A937D5-B446-4D41-91A9-104B90EE7A63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75A937D5-B446-4D41-91A9-104B90EE7A63}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
