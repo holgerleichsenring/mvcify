@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using log4net.Core;
 using Mvcify.Common.Services.Interfaces;
 
@@ -20,6 +21,10 @@ namespace Mvcify.Common.Services.Logging
         /// </summary>
         private readonly log4net.ILog _log4NetLog;
 
+        public virtual void Debug(object message, [CallerMemberName] string memberName = "")
+        {
+            _log4NetLog.Debug(message ?? memberName);
+        }
         public virtual void Debug(object message, Exception exception)
         {
             _log4NetLog.Debug(message, exception);

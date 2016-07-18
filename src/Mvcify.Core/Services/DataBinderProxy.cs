@@ -22,6 +22,7 @@ namespace Mvcify.Core.Services
         public DataBinderProxy(ILog log, IObjectFactory objectFactory, ReflectionHelper reflectionHelper)
         {
             _log = log;
+            _log.Debug();
             _objectFactory = objectFactory;
             _reflectionHelper = reflectionHelper;
         }
@@ -29,6 +30,7 @@ namespace Mvcify.Core.Services
         public void Initialize(ControlDataBindingModel<TModel, TControl, TResult> controlDataBindingModel,
             IDataBinder<TControl> dataBinder)
         {
+            _log.Debug();
             _controlDataBindingModel = controlDataBindingModel;
             _dataBinder = dataBinder;
         }
@@ -36,6 +38,7 @@ namespace Mvcify.Core.Services
         public IDataBinderProxy<TModel, TControl, TResult> DataSource<TCollection>(
             Expression<Func<TModel, TCollection>> expression) where TCollection : ICollection
         {
+            _log.Debug();
             var castedExpression = expression as Expression<Func<TModel, ICollection>>;
             _controlDataBindingModel.DataSourceExpression = castedExpression;
             var function = expression.Compile() as Func<TModel, ICollection>;
@@ -49,6 +52,7 @@ namespace Mvcify.Core.Services
 
         public IDataBinderProxy<TModel, TControl, TResult> DataSource<TData>(IDataSourceBinder<TControl, TData> dataSourceBinder, TData data) where TData : class
         {
+            _log.Debug();
             _controlDataBindingModel.BindDataSourceFunction =
                 delegate { dataSourceBinder.Bind(_controlDataBindingModel.Model, _controlDataBindingModel.Control, data); };
             return this;
@@ -56,12 +60,14 @@ namespace Mvcify.Core.Services
 
         public IDataBinderProxy<TModel, TControl, TResult> OnChanged(Action<TModel> action)
         {
+            _log.Debug();
             _controlDataBindingModel.ChangedAction = action;
             return this;
         }
 
         public IDataBinderValidator<TModel, TControl, TResult> Validate(Expression<Func<TModel, bool>> expression)
         {
+            _log.Debug();
             _controlDataBindingModel.ValidateExpression = expression;
             _controlDataBindingModel.ValidateExpressionFunction = expression.Compile();
 

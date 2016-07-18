@@ -15,14 +15,14 @@ namespace Mvcify.Core.Services
         public CombobBoxDataBinder(ILog log)
         {
             _log = log;
-            _log.Debug("ctor");
+            _log.Debug();
         }
 
         public void BindControlEvents<TModel, TResult>(
             ControlDataBindingModel<TModel, ComboBox, TResult> controlDataBindingModel)
             where TModel : class, INotifyPropertyChanged
         {
-            _log.Debug("BindControlEvents");
+            _log.Debug();
             controlDataBindingModel.Control.TextChanged +=
                 delegate { controlDataBindingModel.SetModelPropertyValue(); };
 
@@ -32,6 +32,7 @@ namespace Mvcify.Core.Services
             ControlDataBindingModel<TModel, ComboBox, TResult> controlDataBindingModel)
             where TModel : class, INotifyPropertyChanged where TCollection : ICollection
         {
+            _log.Debug();
             var list =
                 controlDataBindingModel.DataSourcePropertyInfo.GetValue(controlDataBindingModel.Model) as ICollection;
             foreach (var item in list)
@@ -44,7 +45,7 @@ namespace Mvcify.Core.Services
             ControlDataBindingModel<TModel, ComboBox, TResult> controlDataBindingModel)
             where TModel : class, INotifyPropertyChanged
         {
-            _log.Debug("SetModelPropertyValue");
+            _log.Debug();
             return
                 delegate
                 {
@@ -57,7 +58,7 @@ namespace Mvcify.Core.Services
             ControlDataBindingModel<TModel, ComboBox, TResult> controlDataBindingModel)
             where TModel : class, INotifyPropertyChanged
         {
-            _log.Debug("SetControlPropertyValue");
+            _log.Debug();
             return
                 delegate
                 {

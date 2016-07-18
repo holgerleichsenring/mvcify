@@ -1,4 +1,5 @@
 ﻿using Castle.MicroKernel.Facilities;
+// ReSharper disable All
 
 namespace Mvcify.Common.Services.Logging
 {

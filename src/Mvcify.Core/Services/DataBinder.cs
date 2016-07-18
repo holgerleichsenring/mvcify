@@ -20,14 +20,14 @@ namespace Mvcify.Core.Services
         {
             _bindingModel = new BindingModel<TModel>();
             _log = log;
-            _log.Debug("ctor");
+            _log.Debug();
             _objectFactory = objectFactory;
             _reflectionHelper = reflectionHelper;
         }
 
         public IDataBinderProxy<TModel, TControl, TResult> Bind<TControl, TResult>(TControl control, TModel model, Expression<Func<TModel, TResult>> expression) where TControl: Control
         {
-            _log.Debug("Bind");
+            _log.Debug();
             var dataBinder = _objectFactory.Resolve<IDataBinder<TControl>>();
 
             ControlDataBindingModel<TModel, TControl, TResult> controlDataBindingModel = CreateControlDataBindingModel(control, model, expression);
@@ -43,7 +43,7 @@ namespace Mvcify.Core.Services
 
         private ControlDataBindingModel<TModel, TControl, TResult> CreateControlDataBindingModel<TControl, TResult>(TControl control, TModel model, Expression<Func<TModel, TResult>> expression) where TControl: Control
         {
-            _log.Debug("CreateControlDataBindingModel");
+            _log.Debug();
             var propertyInfo = _reflectionHelper.GetPropertyInfo(model, expression);
             return new ControlDataBindingModel<TModel, TControl, TResult>
             {
@@ -57,7 +57,7 @@ namespace Mvcify.Core.Services
         }
         public void Bind(TModel model)
         {
-            _log.Debug("Bind");
+            _log.Debug();
             var controlExpressions = _bindingModel.ControlDataBindings;
 
             model.PropertyChanged += (sender, args) =>

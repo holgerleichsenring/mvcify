@@ -17,12 +17,12 @@ namespace Mvcify.Core.Services
         public TextBoxDataBinder(ILog log)
         {
             _log = log;
-            _log.Debug("ctor");
+            _log.Debug();
         }
 
         public void BindControlEvents<TModel, TResult>(ControlDataBindingModel<TModel, TextBox, TResult> controlDataBindingModel) where TModel : class, INotifyPropertyChanged
         {
-            _log.Debug("BindControlEvents");
+            _log.Debug();
             controlDataBindingModel.Control.TextChanged +=
                 delegate { controlDataBindingModel.SetModelPropertyValue(); };
         }
@@ -33,7 +33,7 @@ namespace Mvcify.Core.Services
 
         public Action SetModelPropertyValue<TModel, TResult>(ControlDataBindingModel<TModel, TextBox, TResult> controlDataBindingModel) where TModel : class, INotifyPropertyChanged
         {
-            _log.Debug("SetModelPropertyValue");
+            _log.Debug();
             return
                 delegate
                 {
@@ -45,7 +45,7 @@ namespace Mvcify.Core.Services
 
         public Action SetControlPropertyValue<TModel, TResult>(ControlDataBindingModel<TModel, TextBox, TResult> controlDataBindingModel) where TModel : class, INotifyPropertyChanged
         {
-            _log.Debug("SetControlPropertyValue");
+            _log.Debug();
             return
                 delegate
                 {

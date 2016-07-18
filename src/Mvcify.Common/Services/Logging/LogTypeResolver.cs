@@ -2,6 +2,7 @@
 using Castle.MicroKernel;
 using Castle.MicroKernel.Context;
 using log4net;
+// ReSharper disable All
 
 namespace Mvcify.Common.Services.Logging
 {

@@ -1,11 +1,20 @@
 ﻿using System;
 using System.Linq.Expressions;
 using System.Reflection;
+using Mvcify.Common.Services.Interfaces;
 
 namespace Mvcify.Core.Services
 {
     public class ReflectionHelper
     {
+        private readonly ILog _log;
+
+        public ReflectionHelper(ILog log)
+        {
+            _log = log;
+            _log.Debug();
+        }
+
         public PropertyInfo GetPropertyInfo<TSource, TProperty>(
             TSource source,
             Expression<Func<TSource, TProperty>> propertyLambda)

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using Castle.MicroKernel;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
@@ -7,6 +8,7 @@ using Mvcify.Common.Services.Logging;
 
 namespace Mvcify.Common.Services
 {
+    [SuppressMessage("ReSharper", "PossibleNullReferenceException")]
     public class ServiceLocator
     {
         private static WindsorContainer _container;

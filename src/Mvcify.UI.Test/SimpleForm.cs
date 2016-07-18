@@ -15,7 +15,7 @@ namespace Mvcify.UI.Test
             StringListComboBoxDataSourceBinder stringListComboBoxDataSourceBinder)
         {
             _log = log;
-            _log.Debug("ctor");
+            _log.Debug();
             _dataBinder = dataBinder;
             _stringListComboBoxDataSourceBinder = stringListComboBoxDataSourceBinder;
             InitializeComponent();
@@ -25,6 +25,7 @@ namespace Mvcify.UI.Test
 
         public void Render(SimpleModel simpleModel)
         {
+            _log.Debug("Render");
             _dataBinder.Bind(txtName, simpleModel, model => model.Name)
                 .Validate(model => SimpleFormController.ValidateName())
                 .OnSuccess(model => errorProvider1.Clear())

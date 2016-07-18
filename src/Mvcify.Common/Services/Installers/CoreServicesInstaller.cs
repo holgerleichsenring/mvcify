@@ -2,6 +2,7 @@
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using Mvcify.Common.Services.Interfaces;
+// ReSharper disable All
 
 namespace Mvcify.Common.Services.Installers
 {
